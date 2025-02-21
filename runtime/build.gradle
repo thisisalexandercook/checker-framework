@@ -20,7 +20,12 @@ tasks.withType(JavaCompile) {
 jar {
     manifest {
         attributes(
-                'Premain-Class': 'org.checkerframework.runtime.RuntimeAgent' // Adjust to your fully-qualified agent class name.
+                'Premain-Class': 'org.checkerframework.runtime.RuntimeAgent'
                 )
     }
+}
+
+shadowJar {
+    archiveClassifier.set('')
+    mergeServiceFiles()
 }
