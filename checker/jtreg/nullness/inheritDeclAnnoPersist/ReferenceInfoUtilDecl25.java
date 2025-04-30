@@ -1,6 +1,9 @@
-import java.lang.classfile.*;
-import java.lang.classfile.attribute.*;
-import java.util.*;
+import java.lang.classfile.Annotation;
+import java.lang.classfile.Attributes;
+import java.lang.classfile.ClassModel;
+import java.lang.classfile.MethodModel;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.BiPredicate;
 
 public final class ReferenceInfoUtilDecl25 extends BaseReferenceInfoUtil<Annotation, ClassModel> {

@@ -1,4 +1,11 @@
-import com.sun.tools.classfile.*;
+import com.sun.tools.classfile.Attribute;
+import com.sun.tools.classfile.Attributes;
+import com.sun.tools.classfile.ClassFile;
+import com.sun.tools.classfile.Code_attribute;
+import com.sun.tools.classfile.Field;
+import com.sun.tools.classfile.Method;
+import com.sun.tools.classfile.RuntimeTypeAnnotations_attribute;
+import com.sun.tools.classfile.TypeAnnotation;
 
 import java.util.ArrayList;
 import java.util.Arrays;

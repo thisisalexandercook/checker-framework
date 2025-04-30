@@ -1,6 +1,3 @@
-/*
- * @requires jdk.version.major <= 24
- */
 import com.sun.tools.classfile.ClassFile;
 
 import java.lang.reflect.Method;

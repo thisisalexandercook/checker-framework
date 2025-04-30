@@ -1,13 +1,30 @@
 import java.io.PrintStream;
-import java.lang.annotation.*;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 import java.lang.reflect.Method;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Generic test-driver engine.
+ * Generic harness that drives the jtreg byte-code tests.
  *
- * <p>A – annotation node type (TypeAnnotation in both APIs) CF – class-file model type (ClassFile
- * or ClassModel)
+ * <p>The class is parametrised so it can work with either of the two class-file APIs used in the
+ * suite:
+ *
+ * <ul>
+ *   <li><b>A</b> – the annotation node type<br>
+ *       {@code com.sun.tools.classfile.TypeAnnotation} for JDK&nbsp;11-24<br>
+ *       {@code java.lang.classfile.TypeAnnotation} for JDK&nbsp;25+
+ *   <li><b>CF</b> – the in-memory class-file model<br>
+ *       {@code com.sun.tools.classfile.ClassFile} for the old API<br>
+ *       {@code java.lang.classfile.ClassModel} for the new API
+ * </ul>
+ *
+ * Concrete driver wrappers (e.g.&nbsp;{@code Driver24}, {@code Driver25}) plug in three
+ * lambdas—compile, harvest, compare—so the core logic in this class remains unchanged across JDK
+ * versions.
  */
 public abstract class BaseDriver<A, CF> {
 

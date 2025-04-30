@@ -1,6 +1,12 @@
-import com.sun.tools.classfile.*;
+import com.sun.tools.classfile.Annotation;
+import com.sun.tools.classfile.Attribute;
+import com.sun.tools.classfile.ClassFile;
+import com.sun.tools.classfile.ConstantPool;
+import com.sun.tools.classfile.Method;
+import com.sun.tools.classfile.RuntimeAnnotations_attribute;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.BiPredicate;
 
 public final class ReferenceInfoUtilDecl24 extends BaseReferenceInfoUtil<Annotation, ClassFile> {
