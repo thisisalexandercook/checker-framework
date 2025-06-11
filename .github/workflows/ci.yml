@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '25.0.0+23.0.ea'
+          java-version: '25.0.0-ea.23.0.ea'
 
       - name: Show Java version
         run: java -version
