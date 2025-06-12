@@ -6,13 +6,6 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    // ByteBuddy core library.
-    implementation 'net.bytebuddy:byte-buddy:1.14.7'
-    // ByteBuddy agent for instrumentation.
-    implementation 'net.bytebuddy:byte-buddy-agent:1.14.7'
-}
-
 tasks.withType(JavaCompile) {
     options.debug = true
 }
