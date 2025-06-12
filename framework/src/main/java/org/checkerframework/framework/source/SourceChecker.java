@@ -422,13 +422,13 @@ import javax.tools.Diagnostic;
     // as initialized by
     // org.checkerframework.framework.type.GenericAnnotatedTypeFactory.createCFGVisualizer()
     // -Aflowdotdir=xyz
-    // is short-hand for
+    // is shorthand for
     // -Acfgviz=org.checkerframework.dataflow.cfg.DOTCFGVisualizer,outdir=xyz
     "flowdotdir",
 
     // Enable additional output in the CFG visualization.
     // -Averbosecfg
-    // is short-hand for
+    // is shorthand for
     // -Acfgviz=MyClass,verbose
     "verbosecfg",
 
@@ -1244,7 +1244,7 @@ public abstract class SourceChecker extends AbstractTypeProcessor implements Opt
             } catch (Exception e) {
                 throw new TypeSystemError("Could not create an instance of " + subcheckerClass, e);
             }
-
+            instance.setParentChecker(this);
             immediateSubcheckers.add(instance);
             instance.setProcessingEnvironment(this.processingEnv);
             instance.treePathCacher = this.getTreePathCacher();
@@ -1252,7 +1252,6 @@ public abstract class SourceChecker extends AbstractTypeProcessor implements Opt
             instance.subcheckers = Collections.emptyList();
             instance.immediateSubcheckers =
                     instance.instantiateSubcheckers(alreadyInitializedSubcheckerMap);
-            instance.setParentChecker(this);
             alreadyInitializedSubcheckerMap.put(subcheckerClass, instance);
         }
 
